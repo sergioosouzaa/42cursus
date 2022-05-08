@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "ft_bzero.C": "cpp"
+    }
+}
+{
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+}
