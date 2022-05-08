@@ -1,19 +1,30 @@
 #include<stdlib.h>
 
-int ft_memcmp(const void *buf1, const void *buf2, size_t count)
+void *ft_memcpy(void *to, const void *from, size_t count)
 {
-    unsigned char *buffer1;
-    unsigned char *buffer2;
-    size_t pos;
+	char	*buf_to;
+	char	*buf_from;
+	size_t	pos;
 
-    pos = 0;
-    buffer1 = (char*)buf1;
-    buffer2 = (char*)buf2;
-    while (pos < count)
-    {
-        if (*(buffer1 + pos) != *(buffer2 + pos))
-            return (*(buffer1 + pos) - *(buffer2 + pos));
-        pos++;
-    }
-    return (*(buffer1 + pos) - *(buffer2 + pos));
+	pos = 0;
+	buf_to = (char*)to;
+	buf_from = (char*)from;
+	while (pos < count)
+	{
+		*(buf_to + pos) = *(buf_from + pos);
+		pos++;
+	}
+	return (buf_to + pos);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main () 
+// {
+//    const char src[50] = "This is the test!";
+//    char dest[50];
+//    strcpy(dest,"Heloooo!!");
+//    printf("Before memcpy dest = %s\n", dest);
+//    ft_memcpy(dest, src, strlen(src)+1);
+//    printf("After memcpy dest = %s\n", dest);
+// }
