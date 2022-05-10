@@ -27,4 +27,8 @@ void *ft_memcpy(void *to, const void *from, size_t count)
 //    printf("Before memcpy dest = %s\n", dest);
 //    ft_memcpy(dest, src, strlen(src)+1);
 //    printf("After memcpy dest = %s\n", dest);
+	// char csrc[100] = "Geeksfor";
+	// ft_memcpy(csrc + 5, csrc, strlen(csrc) + 1);
+	// printf("%s", csrc);
+	// return 0;
 // }
