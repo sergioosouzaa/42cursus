@@ -10,7 +10,7 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-void copy_str(char const *s, char* new_str)
+static void copy_str(char* new_str, char const *s)
 {
 	size_t pos;
 
@@ -31,8 +31,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 	new_string = (char*)malloc(string_size);
 	if (!new_string)
 		return (0);
-	copy_str(s1, new_string);
-	copy_str(s2, new_string + ft_strlen(s1));
+	copy_str(new_string, s1);
+	copy_str(new_string + ft_strlen(s1), s2);
 	*(new_string + ft_strlen(s1) + ft_strlen(s2)) = '\0';
 	return (new_string);
 }

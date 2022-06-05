@@ -9,6 +9,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	pos_s1 = 0;
 	pos_s2 = 0;
 	point_s1 = 0;
+	if (!s2)
+		return (s1);
 	while (pos_s1 < n && *(s1 + pos_s1) && *(s2 + pos_s2))
 	{
 		if (*(s1 + pos_s1) == *(s2 + pos_s2))

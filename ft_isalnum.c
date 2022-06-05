@@ -10,7 +10,7 @@ static int	ft_isdigit(int ch)
 
 int	ft_isalnum(int ch)
 {
-	return (ft_isdigit(ch) == 1 || ft_isalpha(ch) == 1);
+	return (ft_isdigit(ch) || ft_isalpha(ch));
 }
 
 // #include<stdio.h>
