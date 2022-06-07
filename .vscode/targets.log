@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun  7 09:08:09 2022
+# Make data base, printed on Tue Jun  7 14:38:59 2022
 
 # Variables
 
@@ -28,6 +28,7 @@ XDG_SESSION_TYPE = x11
 VSCODE_LOG_NATIVE = false
 # environment
 NVM_INC = /home/sergio/.nvm/versions/node/v16.13.2/include/node
+ 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -74,7 +75,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_VERBOSE_LOGGING = true
 # environment
 LC_CTYPE = pt_BR.UTF-8
-# makefile (from 'Makefile', line 46)
+# makefile (from 'Makefile', line 44)
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 # environment
 MANAGERPID = 1467
@@ -94,6 +95,8 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 GJS_DEBUG_OUTPUT = stderr
 # environment
 SESSION_MANAGER = local/SergioUbuntu:@/tmp/.ICE-unix/1743,unix/SergioUbuntu:/tmp/.ICE-unix/1743
+# makefile (from 'Makefile', line 45)
+OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -102,7 +105,7 @@ NVM_BIN = /home/sergio/.nvm/versions/node/v16.13.2/bin
 AR = ar rcs
 # environment
 XDG_MENU_PREFIX = gnome-
-# makefile (from 'Makefile', line 42)
+# makefile (from 'Makefile', line 39)
 SRCS_DIR = ./
 # environment
 VSCODE_LOG_STACK = false
@@ -110,6 +113,8 @@ VSCODE_LOG_STACK = false
 ELECTRON_RUN_AS_NODE = 1
 # environment
 INVOCATION_ID = f3dc91aeef7f474e99576429cd60b10b
+# makefile (from 'Makefile', line 29)
+FILES_B = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -119,7 +124,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4050
+GIO_LAUNCHED_DESKTOP_FILE_PID = 12252
 # automatic
 %F = $(notdir $%)
 # environment
@@ -147,7 +152,7 @@ VSCODE_CODE_CACHE_PATH = /home/sergio/.config/Code/CachedData/c3511e6c69bb39013c
 # environment
 LOGNAME = sergio
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 NVM_CD_FLAGS = 
 # automatic
@@ -166,7 +171,7 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
-# makefile (from 'Makefile', line 43)
+# makefile (from 'Makefile', line 40)
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 # environment
 SHLVL = 0
@@ -175,7 +180,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ec812df5-4fd4-4b1e-99cc-b36e62609ad2.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-054f7d9a-971b-4d4a-9b62-6c4596177d80.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -208,7 +213,7 @@ MFLAGS = -pqrR
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 NVM_DIR = /home/sergio/.nvm
-# makefile (from 'Makefile', line 45)
+# makefile (from 'Makefile', line 43)
 OBJS_DIR = ./
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
@@ -238,6 +243,8 @@ SUFFIXES :=
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
+# makefile (from 'Makefile', line 41)
+SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -249,11 +256,12 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4050
+ 
+VSCODE_PID = 12252
 # makefile (from 'Makefile', line 20)
-FILES = ft_isalpha ft_isdigit ft_tolower ft_isalnum ft_isascii ft_isprint ft_strlen ft_strncmp ft_memset ft_bzero ft_memcpy ft_memmove ft_strnstr ft_strlcpy ft_strlcat ft_atoi ft_strchr ft_strrchr ft_memchr ft_memcmp ft_memset 
+FILES = ft_memset ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint 
 # variable set hash-table stats:
-# Load=121/1024=12%, Rehash=0, Collisions=22/154=14%
+# Load=124/1024=12%, Rehash=0, Collisions=24/160=15%
 
 # Pattern-specific Variable Values
 
@@ -261,9 +269,9 @@ FILES = ft_isalpha ft_isdigit ft_tolower ft_isalnum ft_isascii ft_isprint ft_str
 
 # Directories
 
-# . (device 2053, inode 1443536): 41 files, no impossibilities.
+# . (device 2053, inode 1443536): 51 files, no impossibilities.
 
-# 41 files, no impossibilities in 1 directories.
+# 51 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -272,7 +280,7 @@ FILES = ft_isalpha ft_isdigit ft_tolower ft_isalnum ft_isascii ft_isprint ft_str
 # Files
 
 # Not a target:
-ft_strncmp.c:
+ft_lstiter.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -284,82 +292,35 @@ ft_isalnum.c:
 #  File has not been updated.
 
 # Not a target:
-ft_memcpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
- 
-make: *** No rule to make target 'ft_isalpha.o', needed by 'libft.a'.  Stop.
-
-ft_memcmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strlen.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_memmove.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 ft_isdigit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strchr.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 14:38:47.893113096
+#  File has been updated.
+#  Successfully updated.
 
 all: libft.a
+#  Phony target (prerequisite of .PHONY).
 #  Command line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-ft_memchr.o:
+ft_lstlast.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 ft_memset.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 14:38:47.83311437
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-ft_strnstr.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_tolower.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strrchr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strlcat.o:
+ft_lstclear.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -373,43 +334,32 @@ ft_isascii.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-07 09:08:09.52359617
+#  Last modified 2022-06-07 14:38:43.453208141
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_isprint.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 14:38:47.965111566
+#  File has been updated.
+#  Successfully updated.
 
-libft.a: ft_isalpha.o ft_isdigit.o ft_tolower.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_strncmp.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strnstr.o ft_strlcpy.o ft_strlcat.o ft_atoi.o ft_strchr.o ft_strrchr.o ft_memchr.o ft_memcmp.o ft_memset.o
+libft.a: ft_memset.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-06-07 14:38:47.96911148
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 52):
 	$(AR) $@ $^
 
 # Not a target:
-ft_bzero.o:
+ft_lstnew.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-ft_memcpy.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_memcmp.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strlen.c:
+.PHONY: bonus all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -420,13 +370,15 @@ ft_isdigit.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-ft_memchr.c:
+bonus: ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 55):
+	$(AR) $(NAME) $^
 
-.c.o: ft_isalpha.c ft_isdigit.c ft_tolower.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_strncmp.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strnstr.c ft_strlcpy.c ft_strlcat.c ft_atoi.c ft_strchr.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_memset.c
+.c.o: ft_memset.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -434,56 +386,35 @@ ft_memchr.c:
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 fclean: clean
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 60):
+#  recipe to execute (from 'Makefile', line 63):
 	$(RM) $(NAME)
 
 # Not a target:
 ft_memset.c:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_tolower.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strrchr.c:
-#  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 ft_isalpha.o:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-07 14:38:47.869113605
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ft_lstsize.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 .DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strlcat.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_bzero.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strlcpy.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -495,61 +426,47 @@ ft_isprint.c:
 #  File has not been updated.
 
 # Not a target:
-ft_strncmp.o:
+ft_lstmap.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 re: clean all
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
 clean:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 57):
+#  recipe to execute (from 'Makefile', line 60):
 	$(RM) $(OBJS) $(OBJS_B)
 
 # Not a target:
 ft_isalnum.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 14:38:47.917112585
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ft_lstadd_front.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 ft_isascii.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 14:38:47.941112075
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-ft_memmove.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strchr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_atoi.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_strnstr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ft_atoi.o:
+ft_lstdelone.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -561,26 +478,25 @@ ft_isalpha.c:
 #  File has not been updated.
 
 # Not a target:
-ft_strlcpy.c:
+ft_lstadd_back.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=49/1024=5%, Rehash=0, Collisions=9/106=8%
+# Load=32/1024=3%, Rehash=0, Collisions=4/73=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 71 / storage = 808 B / avg = 11 B
- 
-# current buf: size = 8162 B / used = 808 B / count = 71 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 71 / storage = 806 B / avg = 11 B
+# current buf: size = 8162 B / used = 806 B / count = 71 / avg = 11 B
 
-# strcache performance: lookups = 108 / hit rate = 34%
+# strcache performance: lookups = 106 / hit rate = 33%
 # hash-table stats:
-# Load=71/8192=1%, Rehash=0, Collisions=2/108=2%
-# Finished Make data base on Tue Jun  7 09:08:09 2022
+# Load=71/8192=1%, Rehash=0, Collisions=3/106=3%
+# Finished Make data base on Tue Jun  7 14:38:59 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:03:08 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 09:03:29 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:24:51 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,32 +43,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	return(size_dst + size);
 }
-
-// #include<stdio.h>
-// #include <string.h>  // On BSD or compatible systems
-// #include <bsd/string.h>
-// size_t strlcat( char *dst, const char *src, size_t siz);
-// int main(void)
-// {
-// 	char dst[100] = "1234";
-// 	char src[100] = "ABCD";
-// 	printf ("// Return %lu\n", ft_strlcat(dst, src, 3));
-// 	printf ("// dst = %s\n", dst);
-// 	printf ("// src = %s\n", src);
-// 	char dst4[100] = "1234";
-// 	char src4[100] = "ABCD";
-// 	printf ("// Return %lu\n", strlcat(dst4, src4, 3));
-// 	printf ("// dst = %s\n", dst4);
-// 	printf ("// src = %s\n", src4);
-// 	char dst1[100] = "1234";
-// 	char src1[100] = "ABCD";
-// 	printf ("// Return %lu\n", ft_strlcat(dst1, src1, 50));
-// 	printf ("// dst = %s\n", dst1);
-// 	printf ("// src = %s\n", src1);
-// 	char dst2[100] = "1234";
-// 	char src2[100] = "ABCD";
-// 	printf ("// Return %lu\n", strlcat(dst2, src2, 50));
-// 	printf ("// dst = %s\n", dst2);
-// 	printf ("// src = %s\n", src2);
-// 	return 0;
-// }

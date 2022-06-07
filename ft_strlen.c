@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:04:03 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 09:04:12 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:26:39 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,3 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return(i);
 }
-
-// #include<stdio.h>
-// int main()
-// {
-//     char a[20]="Program";
-//     char b[20]={'P','r','o','g','r','a','m','\0'};
-// 	char c[20]="";
-//     printf("Length of string a = %zu \n",ft_strlen(a));
-//     printf("Length of string b = %zu \n",ft_strlen(b));
-// 	printf("Length of string b = %zu \n",ft_strlen(c));
-// }

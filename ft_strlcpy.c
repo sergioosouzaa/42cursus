@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:03:39 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 09:03:58 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:10:43 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	*(dst + pos) = '\0';
 	return(ft_strlen(src));
 }
-
-// #include<stdio.h>
-// void test(int size)
-// {
-//     char string[] = "Hello there, Venus";
-//     char buffer[19];
-//     int r;
-//     r = ft_strlcpy(buffer,string,size);
-//     printf("Copied '%s' into '%s', length %d\n",
-//             string,
-//             buffer,
-//             r
-//           );
-// }
-// int main()
-// {
-//     test(50);
-//     test(10);
-//     test(1);
-//     test(0);
-//     return(0);
-// }
