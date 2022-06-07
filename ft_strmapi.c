@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 08:52:48 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 08:53:14 by sdos-san         ###   ########.fr       */
+/*   Created: 2022/06/07 09:04:16 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 09:04:35 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+static size_t	ft_strlen(const char *str)
 {
-	size_t	pos;
-	char	*buffer;
+	size_t	i;
 
-	buffer = (char*)(s);
-	pos = 0;
-	while(pos < n)
-	{
-		*(buffer + pos) = '\0';
-		pos++;
-	}
+	i = 0;
+	while(*(str + i) != '\0')
+		i++;
+	return (i);
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int main () {
-//    char str[50];
-//    strcpy(str,"This is string.h library function");
-//    puts(str);
-//    ft_bzero(str,7);
-//    puts(str);  
-//    return(0);
-// }
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char*	new_str;
+	size_t	pos;
+
+	pos = 0;
+	new_str = malloc(ft_strlen(s) + 1);
+	if(!new_str)
+		return(0);
+	*(new_str + ft_strlen(s)) = '\0';
+	while(*(s + pos))
+	{
+		*(new_str + pos) = f(pos, *(s + pos));
+		pos++;
+	}
+	return(new_str);
+}

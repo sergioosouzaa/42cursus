@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 08:56:20 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 08:56:36 by sdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<stdlib.h>
 
 void	*ft_memchr(const void *buffer, int ch, size_t count)
@@ -7,13 +19,13 @@ void	*ft_memchr(const void *buffer, int ch, size_t count)
 
 	string_buffer = (char*)buffer;
 	pos = 0;
-	while (pos < count)
+	while(pos < count)
 	{
 		if(*(string_buffer + pos) == ch)
-			return (string_buffer + pos);
+			return(string_buffer + pos);
 		pos++;
 	}
-	return ((void*)0);
+	return((void*)0);
 }
 
 // #include <stdio.h>

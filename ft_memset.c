@@ -1,19 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 08:57:41 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 08:58:02 by sdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include<stdlib.h>
 
-void *ft_memset(void *buf, int ch, size_t count)
+void	*ft_memset(void *buf, int ch, size_t count)
 {
-	size_t pos;
-	unsigned char *buffer;
+	size_t			pos;
+	unsigned char	*buffer;
 
 	buffer = buf;
 	pos = 0;
-	while (pos < count)
+	while(pos < count)
 	{
 		*(buffer + pos) = ch;
 		pos++;
 	}
-	return (buf);
+	return(buf);
 }
 
 // #include <stdio.h>

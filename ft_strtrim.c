@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 09:05:57 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 09:06:31 by sdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<stdlib.h>
-#include<stdio.h>
+
 static size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -10,26 +22,26 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-static int  check_trim_char(char const *set, char s1)
+static int	check_trim_char(char const *set, char s1)
 {
-    size_t pos;
+    size_t	pos;
 
     pos = 0;
-    while (*(set + pos) != '\0')
+    while(*(set + pos) != '\0')
     {
         if(s1 == *(set + pos))
             return (0);
         pos++;
     }
-    return (1);
+    return(1);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    size_t pos1;
-    size_t pos2;
-    size_t pos_out;
-    char* output_string;
+    size_t	pos1;
+    size_t	pos2;
+    size_t	pos_out;
+    char*	output_string;
 
     pos1 = 0;
     pos2 = ft_strlen(s1) - 1;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 09:05:26 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 09:05:40 by sdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<stdlib.h>
 
 char	*ft_strrchr(const char *str, int ch)
@@ -7,13 +19,13 @@ char	*ft_strrchr(const char *str, int ch)
 
 	char_pos = 0;
 	pos = 0;
-	while (*(str + pos) != '\0')
+	while(*(str + pos) != '\0')
 	{
-		if (*(str + pos) == ch)
+		if(*(str + pos) == ch)
 			char_pos = str + pos;
 		pos++;
 	}
-	return ((char*)(char_pos));
+	return((char*)(char_pos));
 }
 
 // #include<stdio.h>

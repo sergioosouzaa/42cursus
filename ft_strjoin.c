@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 09:02:36 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 09:03:04 by sdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<stdlib.h>
 
 static size_t	ft_strlen(const char *str)
@@ -7,24 +19,24 @@ static size_t	ft_strlen(const char *str)
 	i = 0;
 	while(*(str + i) != '\0')
 		i++;
-	return (i);
+	return(i);
 }
 
-static void copy_str(char* new_str, char const *s)
+static void	copy_str(char* new_str, char const *s)
 {
-	size_t pos;
+	size_t	pos;
 
 	pos = 0;
-	while (*(s + pos))
+	while(*(s + pos))
 	{
 		*(new_str + pos) = *(s + pos);
 		pos++;
 	}
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char* 	new_string;
+	char*	new_string;
 	size_t	string_size;
 
 	string_size = 1 + ft_strlen(s1) + ft_strlen(s2);

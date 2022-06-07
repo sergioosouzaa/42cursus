@@ -1,36 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 08:45:56 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/07 08:52:29 by sdos-san         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int ft_isdigit(int ch)
+static int	ft_isdigit(int ch)
 {
-	return (ch >= 48 && ch <= 57);
+	return(ch >= 48 && ch <= 57);
 }
 	
-static int ft_iswhitespace(int ch)
+static int	ft_iswhitespace(int ch)
 {
 	return ((ch >= 9 && ch <= 13) || ch == 32);
 }
 	
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	unsigned int pos;
-	int output;
-	int sign;
+	unsigned int	pos;
+	int				output;
+	int				sign;
 
 	output = 0;
 	sign = 1;
 	pos = 0;
-	while (ft_iswhitespace(*(str + pos)))
+	while(ft_iswhitespace(*(str + pos)))
 		pos++;
-	if (*(str + pos) == '-')
+	if(*(str + pos) == '-')
 	{
 		sign = -1;
 		pos++;
 	}     
-	while (*(str + pos) && ft_isdigit(*(str + pos)))
+	while(*(str + pos) && ft_isdigit(*(str + pos)))
 	{
 		output = (output * 10) + (*(str + pos) - '0');
 		pos++;
 	}
-	return (output * sign);
+	return(output * sign);
 }
 
 // #include <stdio.h>
@@ -47,7 +58,6 @@ int ft_atoi(const char *str)
 //     const char *num9 = "";
 //     const char *num10 = "2147483647";
 //     const char *num11 = "-2147483648";    
-
 //     printf("%d \n", ft_atoi(num1));
 //     printf("%d \n", ft_atoi(num2));
 //     printf("%d \n", ft_atoi(num3));
