@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:55:21 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 20:23:41 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:00:07 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int ch)
 {
-	return(ch >= 48 && ch <= 57);
+	return (ch >= 48 && ch <= 57);
 }

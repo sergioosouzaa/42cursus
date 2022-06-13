@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:07:19 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 09:07:30 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:27:32 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int ch)
 {
-    if(ch >= 97 && ch <= 122)
-        return (ch - 32);
-    return(ch);
+	if (ch >= 97 && ch <= 122)
+		return (ch - 32);
+	return (ch);
 }

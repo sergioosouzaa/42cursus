@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   tests.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:25:11 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 20:31:26 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/09 11:42:27 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 #include<unistd.h>
 #include<stdio.h>
+#include<string.h>
 #include "libft.h"
 
 /* ************************************FT_ISALPHA***************************** */
@@ -106,7 +107,7 @@ int main(void)
 	char b[20]={'P','r','o','g','r','a','m','\0'};
 	printf("OUTPUT: %ld EXPECTED: 7\n", ft_strlen(b));
 	printf("OUTPUT: %ld EXPECTED: 3\n", ft_strlen('ABC'));
-	printf("OUTPUT: %ld EXPECTED: 0\n", ft_strlen(''));
+	printf("OUTPUT: %ld EXPECTED: 0\n", ft_strlen(' '));
 	printf("OUTPUT: %ld EXPECTED: 6\n", ft_strlen('123654'));
 }
 
@@ -175,7 +176,7 @@ int main(void)
     second = txt;
 
     ft_memmove(second + 8, first, 10);
-    printf("OUTPUT : %s EXṔECTED: 012345670123456701\n ", txt);
+    printf("OUTPUT : %s EXṔECTED: 012345670123456789\n ", txt);
 
 }
 
@@ -264,7 +265,309 @@ int main(void)
 {
 	const char text[] = "I. Am. Fearless!";
 	const char text2[] = 'I. Am Fearless!';
-	ret = ft_strncmp(str, ch);
 	printf("Resultado: %d \n",  ft_strncmp(text, text2, 6));
 	printf("Resultado: %d \n",  ft_strncmp(text, text2, 2));
+}
+
+/* ************************************ft_memchr**************************** */
+
+
+int main (void) 
+{
+	const char str[] = "I am. Fearless";
+	const char ch = '.';
+	char *ret;
+	ret = ft_memchr(str, ch, strlen(str));
+	printf("String after |%c| is - |%s|\n", ch, ret);
+	const char str1[] = "I am. Fearless";
+	const char ch1 = '\0';
+	char *ret1;
+	ret1 = ft_memchr(str1, ch1, 155);
+	printf("String after |%c| is - |%s|\n", ch1, ret1);
+}
+
+/* ************************************ft_memcmp**************************** */
+
+int main (void) 
+{
+	char str1[15] = "abcdef";
+	char str2[15] = "ABCDEF";
+	char str3[15] = "ABCDEg";
+	char str4[15] = "ABCDEF";
+	printf("OUTPUT %d EXPECTED 32 \n", ft_memcmp(str1, str2, 4));
+	printf("OUTPUT %d EXPECTED  33\n", ft_memcmp(str3, str4, 6));
+	printf("OUTPUT %d EXPECTED 33\n", memcmp(str3, str4, 6));	
+	printf("OUTPUT %d EXPECTED 0\n", memcmp(str3, str4, 3));	
+}
+
+/* ************************************ft_strnstr**************************** */
+
+int main(void)
+{
+    const char *largestring = "Foo Ba";
+    const char *smallstring = "Bar";
+    char	*ptr;
+    ptr = ft_strnstr(largestring, smallstring, 10);
+    printf("OUTPUT %s EXPECTED: NULL\n", ptr);
+    const char *largestring1 = "Foo Ba";
+    const char *smallstring1 = "Bar";
+    ptr = ft_strnstr(largestring1, smallstring1, 0);
+    printf("OUTPUT %s EXPECTED: NULL\n", ptr);
+    const char *largestring2 = "Foo Bar Baz";
+    const char *smallstring2 = "Bar";
+    ptr = ft_strnstr(largestring2, smallstring2, 4);
+    printf("OUTPUT %s EXPECTED: NULL\n", ptr);
+    const char *largestring3 = "Foo Bar Baz";
+    const char *smallstring3 = "Bar";
+    ptr = ft_strnstr(largestring3, smallstring3, 10);
+    printf("OUTPUT %s EXPECTED: Bar Baz\n", ptr);
+    const char *largestring4 = "Foo Ba";
+    const char *smallstring4 = "";
+    ptr = ft_strnstr(largestring4, smallstring4, 10);
+    printf("OUTPUT %s EXPECTED: Foo Ba\n", ptr);
+}
+
+/* ************************************ft_atoi**************************** */
+
+int main(void)
+{
+    const char *num1 = "     -110.0";
+    const char *num2 = "     110.0";
+    const char *num3 = "     -110";
+    const char *num4 = "     -110a";
+    const char *num5 = "abcd";
+    const char *num6 = "110";
+    const char *num7 = "a110";
+    const char *num8 = "\t\n \f 10";
+    const char *num9 = "";
+    const char *num10 = "2147483647";
+    const char *num11 = "-2147483648";    
+    printf("OUTPUT %d  EXPECTED -110\n", ft_atoi(num1));
+    printf("OUTPUT %d  EXPECTED  110\n", ft_atoi(num2));
+    printf("OUTPUT %d  EXPECTED -110\n", ft_atoi(num3));
+    printf("OUTPUT %d  EXPECTED -110\n", ft_atoi(num4));
+    printf("OUTPUT %d  EXPECTED  0\n", ft_atoi(num5));
+    printf("OUTPUT %d  EXPECTED  110\n", ft_atoi(num6));
+    printf("OUTPUT %d  EXPECTED   0\n", ft_atoi(num7));
+    printf("OUTPUT %d  EXPECTED   10\n", ft_atoi(num8));
+    printf("OUTPUT %d  EXPECTED    0\n", ft_atoi(num9));
+    printf("OUTPUT %d  EXPECTED 2147483647\n", ft_atoi(num10));
+    printf("OUTPUT %d  EXPECTED -2147483648\n", ft_atoi(num11));
+}
+
+
+/* ************************************ft_calloc**************************** */
+
+int main(void)
+{
+    char* ptr;
+	ptr =  ft_calloc(10, 1);
+	int i = 0;
+	while(i < 10)
+	{
+		printf("%c - \n", ptr[i]);
+		i++;
+	}
+	free(ptr);
+	ptr =  ft_calloc(10, 0);
+	printf("OUTPUT %s EXPECTED null or \n", ptr);
+}
+
+/* ************************************ft_strdup**************************** */
+
+int main(void)
+{
+    char txt[] = "Text";
+	char* text_cpy;
+
+	text_cpy =  ft_strdup(txt);
+	printf("OUTPUT %s EXPECTED Text\n", text_cpy);
+	free(text_cpy);
+}
+
+/* ************************************PART II**************************** */
+
+/* ************************************ft_substr**************************** */
+
+int main(void)
+{
+	char* nums = "0123456";
+	printf("OUTPUT %s EXPECTED 123\n", ft_substr(nums, 1, 3));
+	printf("OUTPUT %s EXPECTED \n", ft_substr(nums, 1, 0));
+	printf("OUTPUT %s EXPECTED \n", ft_substr(nums, 8, 3));
+}
+
+/* **********************************ft_strjoin************************** */
+
+int main(void)
+{
+	char* nums = "abcde";
+	char* nums1 = "fghi";
+	printf("OUTPUT %s EXPECTED abcdefghi\n", ft_strjoin(nums, nums1));
+	char* nums2 = "abcde";
+	char* nums3 = "";
+	printf("OUTPUT %s EXPECTED abcde \n", ft_strjoin(nums2, nums3));
+}
+
+/* **********************************ft_strtrim************************** */
+
+int main(void)
+{
+    char const* test = "12abc3123";
+    char const* set = "123";
+    printf("OUTPUT %s EXPECTED abc\n", ft_strtrim(test, set));
+    char const* test1 = "12abc3123";
+    char const* set1 = "123abc";
+    printf("OUTPUT %s EXPECTED    \n", ft_strtrim(test1, set1));
+    char const* test2 = "abc3123";
+    char const* set2 = "123";
+    printf("OUTPUT %s EXPECTED abc\n", ft_strtrim(test2, set2));
+    char const* test3 = "12abc";
+    char const* set3 = "123";
+    printf("OUTPUT %s EXPECTED abc\n", ft_strtrim(test3, set3));
+}
+
+
+/* **********************************ft_split************************** */
+
+int main(void)
+{
+    char** text = ft_split("a.a", '.');
+    printf("%s \n", text[0]);
+	printf("%s \n", text[1]);
+	char** text = ft_split("..a..a..", '.');
+    printf("%s \n", text[0]);
+	printf("%s \n", text[1]);
+	char** text = ft_split("..a..a", '.');
+    printf("%s \n", text[0]);
+	printf("%s \n", text[1]);
+	char** text = ft_split("a..a..", '.');
+    printf("%s \n", text[0]);
+	printf("%s \n", text[1]);
+	char** text = ft_split("aa", '.');
+    printf("%s \n", text[0]);
+	printf("%s \n", text[1]);
+}
+
+/* **********************************ft_itoa************************** */
+
+int main(void)
+{
+	int n = -2147;
+	char* converted = ft_itoa(n);
+	printf("OUTPUT %s EXPECTED -2147\n", converted);
+	free(converted);
+	n = 0;
+	converted = ft_itoa(n);
+	printf("OUTPUT %s EXPECTED 0\n", converted);
+	free(converted);
+	n = 100;
+	converted = ft_itoa(n);
+	printf("OUTPUT %s EXPECTED 100\n", converted);
+	free(converted);
+	n = 2147483647;
+	converted = ft_itoa(n);
+	printf("OUTPUT %s EXPECTED 2147483647\n", converted);
+	free(converted);
+	n = -2147483648;
+	converted = ft_itoa(n);
+	printf("OUTPUT %s EXPECTED -2147483648\n", converted);
+	free(converted);
+}
+
+/* **********************************ft_strmapi************************** */
+
+static char	ft_tolower(unsigned int pos, char ch)
+{
+    if(ch >= 65 && ch <= 90)
+        return(ch + 32 + (pos * 0));
+    return(ch + (pos * 0));
+}
+
+#include<stdio.h>
+int main(void)
+{
+	char (*func_pointer)(unsigned int, char);
+	func_pointer = &ft_tolower;
+	printf("OUTPUT %s EXPECTED abcdefghij \n", ft_strmapi("ABCDEFGHIJ", func_pointer));
+}
+
+/* **********************************ft_striteri************************** */
+
+static void	ft_tolower(unsigned int pos, char* ch)
+{
+    if(*ch >= 65 && *ch <= 90)
+		*ch = *(ch) + 32 + (pos * 0);
+	else
+		*ch = *(ch) + (pos * 0);
+}
+
+#include<stdio.h>
+int main(void)
+{
+	void (*func_pointer)(unsigned int, char*);
+	func_pointer = &ft_tolower;
+	char	letters[] = "ABCDEFGHIJ";
+	ft_striteri(letters, func_pointer);
+	printf("OUTPUT %s EXPECTED abcdefghij \n", letters);
+}
+
+/* **********************************ft_putchar_fd************************** */
+
+int main(void)
+{
+	ft_putchar_fd('a', 1);
+	ft_putchar_fd('\n', 1);
+	ft_putchar_fd('0', 1);
+	ft_putchar_fd('\n', 1);
+	ft_putchar_fd('*', 1);
+	ft_putchar_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putchar_fd(100, 1);
+	ft_putchar_fd('\n', 1);
+}
+
+/* **********************************ft_putstr_fd************************** */
+
+int main(void)
+{
+	ft_putstr_fd("Tufão & Safira \n", 1);
+	ft_putstr_fd("0123456789abcdef \n", 1);
+	ft_putstr_fd("\t \f 10 \n", 1);
+}
+
+/* **********************************ft_putendl_fd************************** */
+
+int main(void)
+{
+	ft_putendl_fd("Tufão & Safira ", 1);
+	ft_putendl_fd("0123456789abcdef ", 1);
+	ft_putendl_fd("\t \f 10 ", 1);
+}
+
+/* **********************************ft_putnbr_fd************************** */
+
+int main(void)
+{
+	ft_putendl_fd("Tufão & Safira ", 1);
+	ft_putendl_fd("0123456789abcdef ", 1);
+	ft_putendl_fd("\t \f 10 ", 1);
+}
+
+/* **********************************ft_putnbr_fd************************** */
+
+int main(void)
+{
+	char new_line = '\n';
+	ft_putnbr_fd(-2147483648, 1);
+	write(1, &new_line, 1);
+	ft_putnbr_fd(-2147483647, 1);
+	write(1, &new_line, 1);
+	ft_putnbr_fd(2147483647, 1);
+	write(1, &new_line, 1);
+	ft_putnbr_fd(0, 1);
+	write(1, &new_line, 1);
+	ft_putnbr_fd(-115, 1);
+	write(1, &new_line, 1);
+	ft_putnbr_fd(1564, 1);
 }

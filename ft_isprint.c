@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:55:34 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 20:23:46 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:00:10 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int ch)
 {
-	return(ch >= 32 && ch <= 126);
+	return (ch >= 32 && ch <= 126);
 }

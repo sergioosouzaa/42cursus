@@ -5,49 +5,59 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 08:59:01 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 08:59:51 by sdos-san         ###   ########.fr       */
+/*   Created: 2022/06/08 17:01:48 by sdos-san          #+#    #+#             */
+/*   Updated: 2022/06/12 18:09:01 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<stdlib.h>
 #include<unistd.h>
 
-static int	handle_negative(int fd)
+static	void	handle_negative(int fd)
 {
 	char	negative;
 
 	negative = '-';
 	write(fd, &negative, 1);
-	return(-1);
+}
+
+static size_t	return_n(int n)
+{
+	size_t	new_n;
+
+	if (n < 0)
+	{
+		if (n == -2147483648)
+			new_n = 2147483648;
+		else
+			new_n = (-1 * n);
+	}
+	else
+		new_n = n;
+	return (new_n);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	size_t	size;
-	int		n_cpy;
+	size_t	n_cpy;
 	char	result;
-	int		sign;
 
-	sign = 1;
-	n_cpy = n;
+	n_cpy = return_n(n);
 	size = 1;
 	if (n < 0)
-		sign = handle_negative(fd);
-	while(n_cpy >= 10)
+		handle_negative(fd);
+	while (n_cpy >= 10)
 	{
-		n_cpy = n_cpy/10;
+		n_cpy = n_cpy / 10;
 		size = size * 10;
 	}
-	while(size > 0)
+	n_cpy = return_n(n);
+	while (size > 0)
 	{
-		result = (sign * (n / size)) + '0';
+		result = (n_cpy / size) + '0';
 		write(fd, &result, 1);
-		n = n % size;
+		n_cpy = n_cpy % size;
 		size = size / 10;
 	}
 }
-
-// int main(void)
-// {
-// 	ft_putnbr_fd(-2147483648, 1);
-// }

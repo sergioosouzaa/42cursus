@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:05:26 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 09:05:40 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:03:31 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,22 @@
 
 char	*ft_strrchr(const char *str, int ch)
 {
-	size_t	pos;
-	const char*	char_pos;
+	size_t		pos;
+	const char	*char_pos;
 
+	ch = ch % 256;
 	char_pos = 0;
 	pos = 0;
-	while(*(str + pos) != '\0')
+	while (*(str + pos) != '\0')
 	{
-		if(*(str + pos) == ch)
+		if (*(str + pos) == ch)
 			char_pos = str + pos;
 		pos++;
 	}
-	return((char*)(char_pos));
+	if (ch == 0)
+	{
+		char_pos = str + pos;
+		return ((char *)(char_pos));
+	}
+	return ((char *)(char_pos));
 }
-
-// #include<stdio.h>
-// int main(void)
-// {
-// 	const char str[] = "I. Am. Fearless!";
-// 	const char ch = '.';
-// 	char *ret;
-// 	ret = ft_strrchr(str, ch);
-// 	printf("String after |%c| is - |%s|\n", ch, ret);
-// 	const char str1[] = "I. Am. Fearless!.";
-// 	const char ch1 = '.';
-// 	char *ret1;
-// 	ret1 = ft_strrchr(str1, ch1);
-// 	printf("String after |%c| is - |%s|\n", ch1, ret1);
-// 	const char str2[] = "I. Am. Fearless!.";
-// 	const char ch2 = '-';
-// 	char *ret2;
-// 	ret2 = ft_strrchr(str2, ch2);
-// 	printf("String after |%c| is - |%s|\n", ch2, ret2);
-// }

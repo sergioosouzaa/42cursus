@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:07:43 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 10:13:47 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:28:14 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_atoi(const char *str);
 
 /* **********************************MALLOC*********************************** */
 void	*ft_calloc(size_t nmemb, size_t size);
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s);
 
 /* **********************************PART II********************************** */
 char	*ft_substr(char const *s, unsigned int start, size_t len);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:57:41 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/07 20:24:32 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:30:29 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ void	*ft_memset(void *buf, int ch, size_t count)
 
 	buffer = buf;
 	pos = 0;
-	if(!buffer)
+	while (pos < count)
 	{
-		while(pos < count)
-		{
-			*(buffer + pos) = ch;
-			pos++;
-		}
+		*(buffer + pos) = ch;
+		pos++;
 	}
-	return(buf);
+	return (buf);
 }
