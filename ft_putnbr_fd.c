@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdos-san <sdos-san@student.42.rio>         +#+  +:+       +#+        */
+/*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:01:48 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/12 18:09:01 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 13:50:45 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
 #include<unistd.h>
 
 static	void	handle_negative(int fd)

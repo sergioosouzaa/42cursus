@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:04:41 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/09 12:17:46 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:31:06 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	ft_strncmp(const char *str1, const char *str2, size_t count)
 		return (0);
 	if (pos == count)
 		pos--;
-	return ((*(str1 + pos) - *(str2 + pos)));
+	return (((unsigned char)*(str1 + pos) - (unsigned char)*(str2 + pos)));
 }

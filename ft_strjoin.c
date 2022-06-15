@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:02:36 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/08 17:21:48 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:28:35 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*new_string;
 	size_t	string_size;
 
+	if (!s1 || !s2)
+		return (0);
 	string_size = 1 + ft_strlen(s1) + ft_strlen(s2);
 	new_string = (char *)malloc(string_size);
 	if (!new_string)

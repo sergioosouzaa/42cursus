@@ -6,11 +6,16 @@
 /*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:00:33 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/08 17:18:25 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:01:08 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
+
+static void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -19,10 +24,11 @@ void	ft_putstr_fd(char *s, int fd)
 
 	pos = 0;
 	nullchar = '\0';
+	if (!s)
+		return ;
 	while (*(s + pos))
 	{
-		write(fd, &(*(s + pos)), 1);
+		ft_putchar_fd(*(s + pos), fd);
 		pos++;
 	}
-	write(fd, &nullchar, 1);
 }

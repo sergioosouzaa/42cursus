@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:06:35 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/09 14:46:46 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:29:16 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	pos = start;
 	pos_sub = 0;
 	string_size = len;
+	if (!s)
+		return (0);
 	if (start > ft_strlen(s))
 		string_size = 0;
 	else if (len >= ft_strlen(s + start))

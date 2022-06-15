@@ -6,11 +6,24 @@
 /*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:57:21 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/09 11:42:34 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:47:39 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+
+static void	*copy_str_left(char *char_to, const char *char_from, size_t count)
+{
+	size_t	pos;
+
+	pos = 0;
+	while (pos < count)
+	{
+		*(char_to + pos) = *(char_from + pos);
+		pos++;
+	}
+	return (char_to);
+}
 
 void	*ft_memmove(void *to, const void *from, size_t count)
 {
@@ -22,14 +35,11 @@ void	*ft_memmove(void *to, const void *from, size_t count)
 	char_from = (const char *)from;
 	if (count == 0)
 		return (char_to);
-	if (to + count < from)
+	if (!char_from && !char_to && count > 0)
+		return (char_to);
+	if (to < from)
 	{
-		pos = 0;
-		while (pos < count)
-		{
-			*(char_to + pos) = *(char_from + pos);
-			pos++;
-		}
+		copy_str_left(char_to, char_from, count);
 		return (char_to);
 	}
 	pos = count - 1;

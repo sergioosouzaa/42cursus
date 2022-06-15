@@ -6,7 +6,7 @@
 /*   By: sdos-san <sdos-san@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:56:43 by sdos-san          #+#    #+#             */
-/*   Updated: 2022/06/09 13:12:08 by sdos-san         ###   ########.fr       */
+/*   Updated: 2022/06/13 13:40:35 by sdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *buf1, const void *buf2, size_t count)
 {
-	size_t	pos;
+	size_t			pos;
 	unsigned char	*buffer1;
 	unsigned char	*buffer2;
 
